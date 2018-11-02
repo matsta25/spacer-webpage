@@ -21,7 +21,7 @@
 import axios from 'axios';
 import debounce from 'lodash.debounce';
 
-let API = 'https://images-api.nasa.gov';
+const API = 'https://images-api.nasa.gov';
 
 
 export default {
@@ -33,6 +33,7 @@ export default {
     };
   },
   methods: {
+    // eslint-disable-next-line
     handleInput: debounce(function() {
       axios.get(`${API}/search?q=${this.searchValue}&media_type=image`)
         .then((response) => {
